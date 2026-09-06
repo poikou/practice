@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>マイサイト</title>
+
+  <style>
+    /* =========================
+       基本設定
+       ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans JP", sans-serif;
+      background-color: #d5dae0;
+      color: #333;
+
+      /* Footerを画面下にする */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    /* =========================
+       ヘッダー
+       ========================= */
+
+    header {
+      background-color: #2563eb;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+
+    /* =========================
+       メインコンテナ
+       ========================= */
+
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 30px auto;
+      padding: 0 20px;
+
+      /* コンテンツが少なくても
+         Footerを下に押し下げる */
+      flex: 1;
+    }
+
+
+    /* =========================
+       メイン + サイドバー
+       ========================= */
+
+    .content {
+      display: flex;
+      gap: 25px;
+    }
+
+
+    /* =========================
+       メインコンテンツ
+       ========================= */
+
+    .main {
+      flex: 1;
+
+      background-color: white;
+      padding: 30px;
+
+      border-radius: 12px;
+
+    }
+
+    .main h2 {
+      margin-top: 0;
+
+      color: #2563eb;
+
+      border-left: 5px solid #2563eb;
+      padding-left: 12px;
+    }
+
+    .main p {
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       ボタン
+       ========================= */
+
+    .button {
+      display: inline-block;
+
+      background-color: #2563eb;
+      color: white;
+
+      padding: 12px 24px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      margin-top: 10px;
+
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: #1d4ed8;
+    }
+
+
+    /* =========================
+       サイドバー
+       ========================= */
+
+    .sidebar {
+      width: 280px;
+
+      background-color: #dbeafe;
+
+      padding: 25px;
+
+      border-radius: 12px;
+
+      box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+
+    .sidebar ul {
+      padding-left: 20px;
+    }
+
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+
+    /* =========================
+       Footer
+       ========================= */
+
+    footer {
+      background-color: #1e293b;
+      color: white;
+
+      text-align: center;
+
+      padding: 20px;
+    }
+
+
+    /* =========================
+       スマホ
+       700px以下
+       ========================= */
+
+    @media (max-width: 700px) {
+
+      /* ヘッダー */
+      header {
+        padding: 20px 15px;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+
+      /* メインコンテナ */
+      .container {
+        margin: 20px auto;
+        padding: 0 15px;
+      }
+
+
+      /* 1列表示 */
+      .content {
+        display: block;
+      }
+
+
+      /* サイドバーを非表示 */
+      .sidebar {
+        display: none;
+      }
+
+
+      /* メインコンテンツ */
+      .main {
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .main h2 {
+        font-size: 20px;
+      }
+
+
+      /* ボタンを横幅いっぱい */
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+
+
+      /* Footer */
+      footer {
+        padding: 18px 15px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       ヘッダー
+       ========================= -->
+
+  <header>
+    <h1>マイサイト</h1>
+  </header>
+
+
+  <!-- =========================
+       メイン
+       ========================= -->
+
+  <div class="container">
+
+    <div class="content">
+
+      <!-- メインコンテンツ -->
+      <main class="main">
+
+        <h2>メインコンテンツ</h2>
+
+        <p>
+          ここにサイトの内容を入れます。
+        </p>
+
+        <p>
+          PCでは右側にサイドバーが表示されます。
+          画面幅が700px以下になると、
+          スマホ向けのレイアウトに切り替わります。
+        </p>
+
+        <a href="#" class="button">
+          詳しく見る
+        </a>
+
+      </main>
+
+
+      <!-- サイドバー -->
+      <aside class="sidebar">
+
+        <h2>メニュー</h2>
+
+        <ul>
+          <li>ホーム</li>
+          <li>プロフィール</li>
+          <li>サービス</li>
+          <li>お問い合わせ</li>
+        </ul>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       Footer
+       ========================= -->
+
+  <footer>
+    © 2026 マイサイト
+  </footer>
+
+
+</body>
+
+</html>
